@@ -226,6 +226,7 @@ MisterArpEditor::MisterArpEditor (MisterArpProcessor& p)
       grid (p), dragMidi (p), panel (p.apvts),
       keyboard (p.keyboardState, juce::MidiKeyboardComponent::horizontalKeyboard)
 {
+    lnf.setAccent (Col::cyan);
     setLookAndFeel (&lnf);
     logo = juce::ImageCache::getFromMemory (BinaryData::TullyLogo_png, BinaryData::TullyLogo_pngSize);
 
@@ -306,7 +307,7 @@ void MisterArpEditor::timerCallback()
 
 void MisterArpEditor::paint (juce::Graphics& g)
 {
-    g.fillAll (Col::bg);
+    neon::paintBackdrop (g, getLocalBounds(), Col::cyan, backdrop);
     tui::paintHeader (g, logo, "MISTER ARP", "advanced arpeggiator synth + drag-out MIDI", Col::cyan);
     if (page == 0)
     {

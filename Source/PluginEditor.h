@@ -66,6 +66,7 @@ public:
 
     MisterArpProcessor& proc;
     tui::LnF lnf;
+    neon::BackdropCache backdrop;
     juce::Image logo;
     tui::PresetBar presetBar;
     tui::Scope scope;

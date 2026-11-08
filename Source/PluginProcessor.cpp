@@ -70,6 +70,7 @@ bool MisterArpProcessor::isBusesLayoutSupported (const BusesLayout& l) const
 
 void MisterArpProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
+    monoScratchBuf.assign ((size_t) juce::jmax (1, samplesPerBlock) * 2, 0.0f);
     engine.prepare (sampleRate, juce::jmax (1, samplesPerBlock));
     arp.prepare (sampleRate);
     keyboardState.reset();
@@ -138,8 +139,7 @@ void MisterArpProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::M
 
     float* L = buffer.getWritePointer (0);
     float* R = nch > 1 ? buffer.getWritePointer (1) : nullptr;
-    juce::HeapBlock<float> monoR;
-    if (R == nullptr) { monoR.allocate ((size_t) n, true); R = monoR.get(); }
+    if (R == nullptr) { R = monoScratch (n); std::fill (R, R + n, 0.0f); }   // preallocated: no audio-thread malloc
     int pos = 0;
     for (const auto meta : synthMidi)
     {
