@@ -173,6 +173,44 @@ namespace marp
         { "Tied Legato Line", "Experimental", "Ties make long notes inside a fast pattern.",
           "voice_mode=Legato glide=0.06 osc1_wave=Saw osc2_wave=Saw osc2_fine=8 osc2_level=0.6 cutoff=1600 reso=0.35 flt_env=0.35 lfo_rate=5.5 lfo_pitch=0.15 lfo_delay=0.3 reverb=0.3 "
           "arp_mode=As_Played arp_rate=1/16 arp_oct=2 arp_gate=0.9 steps=X,_,_,x,X,_,x,x,X,_,_,_,x,x,X,_ volume=-6.4" },
+
+        // ------------------------------------------------------------------ NEW IN 1.2
+        { "Afterlife Arc", "Melodic Techno", "Dark saw pluck climbing in triplets; long dotted echoes. Hold a minor chord.",
+          "osc1_wave=Saw osc1_unison=2 osc1_detune=0.18 osc2_wave=Pulse osc2_oct=-1 osc2_level=0.3 flt_type=LP_12 cutoff=700 reso=0.4 flt_env=0.5 flt_d=0.22 flt_s=0 amp_d=0.3 amp_s=0 amp_r=0.3 delay=0.4 delay_time=1/8D delay_fb=0.55 reverb=0.45 reverb_size=0.85 width=1.2"
+          "arp_mode=Up arp_rate=1/8T arp_oct=2 arp_gate=0.5 steps=X,x,x,o,x,x,X,x,x,o,x,x volume=-4.9" },
+        { "Rolling Minor Sixteenths", "Melodic Techno", "Hypnotic 16th sequence with a skipped step that keeps it moving.",
+          "osc1_wave=Saw cutoff=520 reso=0.55 flt_env=0.55 flt_d=0.14 flt_s=0 flt_key=0.6 amp_d=0.2 amp_s=0 amp_r=0.12 delay=0.3 delay_time=1/16D delay_fb=0.5 reverb=0.3"
+          "arp_mode=Up/Down arp_rate=1/16 arp_oct=1 arp_gate=0.45 steps=X,x,.,x,x,x,.,x,X,x,.,x,x,o,x,. volume=2.2" },
+        { "Sunrise Bells", "Melodic & Ambient", "FM bells in random order with probability, like wind chimes over a pad.",
+          "osc1_wave=FM fm_ratio=3:1 osc1_shape=0.35 osc2_wave=Sine osc2_oct=1 osc2_level=0.3 cutoff=12000 flt_env=0 amp_d=1.2 amp_s=0 amp_r=1.0 chorus=0.25 delay=0.35 delay_time=1/4D delay_fb=0.45 reverb=0.6 reverb_size=0.9 width=1.3"
+          "arp_mode=Random arp_rate=1/8 arp_oct=3 arp_gate=0.8 steps=X,xp70,op60,x,Xp80,.,xp70,o volume=-9.3" },
+        { "Kalimba Walk", "Afro & Organic", "Wooden sine pluck stepping up and down with a light shuffle.",
+          "osc1_wave=Sine osc1_level=0.9 osc2_wave=Triangle osc2_oct=2 osc2_level=0.25 cutoff=4000 flt_env=0.3 flt_d=0.08 flt_s=0 amp_d=0.35 amp_s=0 amp_r=0.25 reverb=0.3 reverb_size=0.5"
+          "arp_mode=Up/Down arp_rate=1/16 arp_oct=2 arp_gate=0.6 arp_swing=0.25 steps=X,x,o,x,x,o,X,x,o,x,x,o,x,x,o,x volume=-4.9" },
+        { "Afro House Guitar", "Afro & Organic", "Muted plucked-string figure with off-beat accents and a 1/8 shuffle.",
+          "osc1_wave=Pulse osc1_shape=0.25 osc2_wave=Saw osc2_level=0.3 osc2_fine=6 flt_type=Band cutoff=1500 reso=0.35 flt_env=0.4 flt_d=0.1 flt_s=0 amp_d=0.18 amp_s=0 amp_r=0.1 chorus=0.2 delay=0.2 delay_time=1/8 delay_fb=0.3 reverb=0.25"
+          "arp_mode=As_Played arp_rate=1/16 arp_oct=1 arp_gate=0.4 arp_swing=0.3 steps=x,.,X,x,.,x,X,.,x,.,X,x,.,x,X,o volume=3.5" },
+        { "Balafon Run", "Afro & Organic", "Bright mallet tone running through the chord with ratchets on the turn.",
+          "osc1_wave=Triangle osc1_level=0.85 osc2_wave=Sine osc2_semi=12 osc2_level=0.35 cutoff=6000 flt_env=0.25 flt_d=0.07 flt_s=0 amp_d=0.22 amp_s=0 amp_r=0.15 reverb=0.3"
+          "arp_mode=Converge arp_rate=1/16 arp_oct=2 arp_gate=0.5 steps=X,x,x,x,X,x,xr2,x,X,x,x,x,X,x,xr3,o volume=-2.0" },
+        { "Tension Ostinato", "Cinematic", "Low staccato strings-like pulse for trailers; accents every third step.",
+          "osc1_wave=Saw osc1_unison=3 osc1_detune=0.2 osc2_wave=Saw osc2_oct=-1 osc2_level=0.5 flt_type=LP_12 cutoff=1100 reso=0.15 flt_env=0.35 flt_d=0.15 flt_s=0.1 amp_d=0.2 amp_s=0.2 amp_r=0.12 reverb=0.4 reverb_size=0.85 width=1.2"
+          "arp_mode=Thumb arp_rate=1/16 arp_oct=1 arp_gate=0.55 steps=X,x,x,X,x,x,X,x,x,X,x,x,X,x,X,x volume=-4.8" },
+        { "Harp Glissando", "Cinematic", "Fast up-down sweep across four octaves, like a harp run into a chorus.",
+          "osc1_wave=Triangle osc2_wave=Sine osc2_oct=1 osc2_level=0.3 cutoff=7000 flt_env=0.2 flt_d=0.1 flt_s=0 amp_d=0.6 amp_s=0 amp_r=0.6 reverb=0.55 reverb_size=0.85 width=1.2"
+          "arp_mode=Up/Down arp_rate=1/32 arp_oct=4 arp_gate=0.9 steps=X,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x volume=-10.6" },
+        { "Breakbeat Stabs", "Breaks & DnB", "Syncopated chord stabs on a breakbeat grid. Hold a 7th chord.",
+          "osc1_wave=Square osc1_unison=3 osc1_detune=0.25 osc2_wave=Saw osc2_level=0.4 cutoff=1800 reso=0.3 flt_env=0.5 flt_d=0.12 flt_s=0 amp_d=0.15 amp_s=0 amp_r=0.1 reverb=0.2"
+          "arp_mode=Chord arp_rate=1/16 arp_oct=1 arp_gate=0.4 steps=X,.,.,x,.,.,X,.,.,x,.,X,.,.,x,. volume=-4.0" },
+        { "Liquid Roller", "Breaks & DnB", "Soft Rhodes-like FM arp for liquid drum & bass at 170.",
+          "osc1_wave=FM fm_ratio=1:1 osc1_shape=0.25 osc2_wave=Sine osc2_level=0.4 cutoff=5000 flt_env=0.15 amp_d=0.5 amp_s=0.2 amp_r=0.4 chorus=0.35 delay=0.25 delay_time=1/8D reverb=0.4 width=1.2"
+          "arp_mode=Pinky arp_rate=1/16 arp_oct=2 arp_gate=0.7 steps=X,x,o,x,x,o,x,x,X,x,o,x,x,o,x,o volume=-9.4" },
+        { "Lo-Fi Tape Keys", "Lo-Fi", "Dusty, slightly detuned keys rolling through the chord with a lazy swing.",
+          "osc1_wave=Triangle osc1_level=0.8 osc2_wave=Square osc2_level=0.15 osc2_fine=-12 noise=0.04 cutoff=2400 reso=0.1 flt_env=0.2 flt_d=0.3 flt_s=0.2 amp_d=0.6 amp_s=0.2 amp_r=0.5 lfo_rate=0.6 lfo_pitch=0.04 chorus=0.3 reverb=0.3"
+          "arp_mode=As_Played arp_rate=1/8 arp_oct=1 arp_gate=0.8 arp_swing=0.4 steps=X,x,x,o,x,x,x,o volume=-3.7" },
+        { "Lo-Fi Music Box", "Lo-Fi", "Small, warm music box with skipped notes, made for chill beats.",
+          "osc1_wave=Sine osc1_level=0.8 osc2_wave=Sine osc2_oct=2 osc2_level=0.2 noise=0.03 cutoff=3500 flt_env=0.1 amp_d=0.7 amp_s=0 amp_r=0.6 lfo_rate=0.5 lfo_pitch=0.03 reverb=0.4 reverb_size=0.6"
+          "arp_mode=Down arp_rate=1/8 arp_oct=2 arp_gate=0.7 arp_swing=0.2 steps=X,x,xp60,x,o,x,xp70,. volume=-4.8" },
         };
         return p;
     }
