@@ -5,6 +5,7 @@
   ==============================================================================
 */
 #include "PluginProcessor.h"
+#include "TullyLicence.h"
 #include "PluginEditor.h"
 
 namespace
@@ -53,6 +54,8 @@ MisterArpProcessor::MisterArpProcessor()
     : AudioProcessor (BusesProperties().withOutput ("Output", juce::AudioChannelSet::stereo(), true)),
       apvts (*this, nullptr, "PARAMS", createLayout())
 {
+    tully::licence ("Mister Arp");   // purchase activation (TullyLicence.h)
+
     reader.attach (apvts);
     pOn = apvts.getRawParameterValue ("arp_on"); pMode = apvts.getRawParameterValue ("arp_mode"); pRate = apvts.getRawParameterValue ("arp_rate");
     pOct = apvts.getRawParameterValue ("arp_oct"); pGate = apvts.getRawParameterValue ("arp_gate"); pSwing = apvts.getRawParameterValue ("arp_swing");
@@ -92,6 +95,8 @@ marp::Settings MisterArpProcessor::currentSettings() const
 
 void MisterArpProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midi)
 {
+    if (! tully::licence().ok()) { buffer.clear(); midi.clear(); return; }   // not activated yet: silent
+
     juce::ScopedNoDenormals nd;
     const int n = buffer.getNumSamples();
     const int nch = buffer.getNumChannels();

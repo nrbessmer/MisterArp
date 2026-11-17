@@ -5,6 +5,7 @@
   ==============================================================================
 */
 #include "PluginEditor.h"
+#include "TullyLicence.h"
 #include "BinaryData.h"
 
 using namespace marpui;
@@ -278,6 +279,8 @@ MisterArpEditor::MisterArpEditor (MisterArpProcessor& p)
     setSize (1100, 700);
     showPage (0);
     startTimerHz (30);
+
+    tully::addActivation (*this);   // activation screen until this Mac is licensed
 }
 
 MisterArpEditor::~MisterArpEditor() { stopTimer(); setLookAndFeel (nullptr); }
